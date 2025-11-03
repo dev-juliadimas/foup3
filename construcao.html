@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ops... Estamos em Desenvolvimento</title>
+    <link rel="stylesheet" href="css/estConstrucao.css">
+</head>
+<body>
+<div id="nav-placeholder"></div>
+    <div class="container-central">
+        
+        <div class="conteudo">
+            
+            <p class="mensagem-alerta">
+                <span class="ops-titulo">OPS...</span> Desculpe, ainda estamos desenvolvendo esta página
+            </p>
+            
+            <img src="arquivos/carregando/imagem.png" alt="Desenho de guindaste e logos da FOUP" class="imagem-principal">
+
+            <button class="botao-voltar" onclick="voltarPagina()">Voltar</button>
+
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+    <script>
+        /**
+         * Função JavaScript para voltar para a página anterior no histórico do navegador.
+         * É o ideal para o botão "Voltar".
+         */
+        function voltarPagina() {
+            window.history.back();
+        }
+    </script>
+    <script src="js/carrega.js"></script>
+</body>
+</html>
