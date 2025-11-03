@@ -1,0 +1,103 @@
+/* =================================== */
+/* Documentação: Estilos Gerais da Tela */
+/* =================================== */
+
+/* Remove margens e preenchimentos padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo da página (body) */
+body {
+    /* Altura total da área de visualização (View-Height) */
+    min-height: 100vh; 
+    
+    /* 🎨 ATENÇÃO: Substitua pelo seu caminho de imagem de fundo */
+    background-image: url('../arquivos/carregando/background.png');
+    
+    /* Garante que a imagem cubra todo o fundo sem repetição */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Usa uma fonte moderna, caso a original não esteja disponível */
+    font-family: Arial, sans-serif;
+    color: #fff; /* Cor do texto principal (branco) */
+}
+
+/* =================================== */
+/* Estilo do Container e Centralização */
+/* =================================== */
+
+.container-central {
+    /* Usa Flexbox para centralizar o conteúdo */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Ocupa a altura total da tela */
+    text-align: center; /* Centraliza o texto dentro do container */
+}
+
+.conteudo {
+    /* Define a largura máxima para o conteúdo */
+    max-width: 800px; 
+    /* Adiciona um pequeno espaço interno e alinha os itens no centro */
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Coloca os elementos (texto, imagem, botão) um debaixo do outro */
+    align-items: center;
+    gap: 30px; /* Espaçamento entre os elementos (mensagem, imagem, botão) */
+}
+
+/* =================================== */
+/* Estilos da Mensagem */
+/* =================================== */
+
+.mensagem-alerta {
+    font-size: 24px;
+    font-weight: 300; /* Letra mais fina, como na imagem */
+    letter-spacing: 1px;
+    margin-top: 50px; /* Para descer um pouco, se necessário */
+}
+
+.ops-titulo {
+    font-weight: 700; /* Para o "OPS..." ficar em negrito */
+    font-size: 36px;
+    /* Para a cor do "OPS..." ser diferente se quiser (como na imagem parece ser branco) */
+    color: white; 
+}
+
+/* =================================== */
+/* Estilos da Imagem */
+/* =================================== */
+
+.imagem-principal {
+    max-width: 100%; /* Garante que a imagem não saia da tela em dispositivos móveis */
+    height: auto;
+    /* Para a imagem não ficar muito grande em telas grandes */
+    max-height: 400px; 
+}
+
+/* =================================== */
+/* Estilos do Botão Voltar (Padrão do Site) */
+/* =================================== */
+
+.botao-voltar {
+    /* Cor do fundo e borda conforme a imagem (parece ser verde claro ou branco-verde) */
+    background-color: transparent; 
+    color: white; /* Cor do texto do botão */
+    border: 2px solid white; /* Borda branca, como na imagem */
+    border-radius: 50px; /* Borda arredondada (o padrão do seu site) */
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transição suave para o efeito hover */
+}
+
+.botao-voltar:hover {
+    background-color: white; /* Inverte as cores ao passar o mouse */
+    color: #008cba; /* Cor de texto que combine com o azul do fundo */
+}

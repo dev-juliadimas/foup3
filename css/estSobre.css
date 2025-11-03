@@ -1,0 +1,172 @@
+@import url(estPadrao.css);
+
+.foup-header-image {
+  
+  height                : 350px;
+  display               : flex;
+  align-items           : center;
+  justify-content       : center;
+    color               : var(--cor-branco);
+    position            : relative;
+    min-height          : 85vh; 
+    background-image    : url('../arquivos/sobre/predio-logo.png');
+    background-size     : cover; 
+    background-repeat   : no-repeat;
+    background-position : center;
+}
+
+.foup-header-image::before {
+  content               : "";
+  position              : absolute;
+  top                   : 0;
+  left                  : 0;
+  right                 : 0;
+  bottom                : 0;
+  background            : var(--cor-preto);
+}
+
+.foup-header-image h1 {
+  z-index               : 1;
+  font-size             : 3.5rem;
+}
+
+.foup-about-section {
+  padding               : 60px 0;
+  background-color      : var(--cor-branco);
+}
+
+.pillar-card {
+  border: none;
+  text-align            : center;
+  padding               : 20px;
+  transition            : transform 0.3s;
+}
+
+.pillar-card:hover {
+  transform             : translateY(-5px);
+}
+
+.pillar-card i {
+  font-size             : 2.5rem;
+  color                 : var(--cor-azul-escuro);
+  margin-bottom         : 15px;
+}
+
+.pillar-card h5 {
+  color                 : var(--cor-azul-escuro);
+  font-weight           : 600;
+}
+
+.pillar-card a {
+  color                 : var(--cor-laranja);
+  text-decoration       : none;
+  font-weight           : 500;
+}
+
+.pillar-card img {
+    width               : 48px;
+    height              : 48px;
+    margin-bottom       : 15px;
+}
+
+.icon-svg-md {
+    width               : 48px;
+    height              : 48px;
+}
+
+.foup-text-content {
+    padding             : 40px 0;
+    padding-top         : 120px;
+    background-color    : var(--cor-branco);
+}
+
+.foup-text-content h2 {
+    color               : var(--cor-azul-escuro);
+    font-size           : 2.2rem;
+    margin-bottom       : 20px;
+}
+
+.foup-text-content p {
+    margin-bottom       : 20px;
+    text-align          : justify;
+    line-height         : 1.7;
+    font-size           : 0.95rem;
+}
+
+.foup-text-content .eixo-list {
+    padding-left        : 20px;
+    columns             : 2; /* Divide a lista de eixos em duas colunas */
+    list-style          : disc;
+}
+
+.foup-about-section {
+    padding             : 60px 0;
+}
+
+.exp-texto{
+    padding-top         : 120px;
+}
+ /* --- ESTILOS DO RETÂNGULO LARANJA (Corrigindo a Altura) --- */
+
+/* Aplica Flexbox no Container Pai para igualar a altura das colunas */
+.foup-text-content .row {
+    /* O Bootstrap já tem display: flex; mas vamos garantir */
+    display: flex; 
+    align-items: stretch; /* Garante que as colunas se estiquem até o máximo de altura */
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+/* Coluna que contém o TÍTULO e o RETÂNGULO LARANJA */
+.foup-text-content .col-md-4:first-child { 
+    /* Coluna do título e retângulo, que é a primeira col-md-4 da seção */
+    padding: 0; /* Remove o padding horizontal do Bootstrap para a cor ir até a borda */
+    display: flex;
+    flex-direction: column; /* Organiza o Título e o Retângulo verticalmente */
+}
+
+.titulo-principal {
+    /* Seu título, mas agora com flex-shrink para não crescer */
+    padding: 1.5rem; /* Adiciona padding para o texto não colar na borda */
+    flex-shrink: 0; /* Impede que o título tente ocupar mais espaço vertical */
+}
+
+/* O RETÂNGULO LARANJA PROPRIAMENTE DITO */
+.retangulo-laranja-conteudo {
+    background-color: #ff8c00; 
+    flex-grow: 1; /* ESSA PROPRIEDADE FAZ O RETÂNGULO OCUPAR TODO O ESPAÇO RESTANTE */
+    
+    /* Centralização do Ícone */
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    padding: 0;
+}
+/* Estilos existentes para o ícone */
+
+/* Ajuste das outras colunas para ter o mesmo padding visual */
+.foup-text-content .col-md-4 {
+    padding: 1.5rem; /* Padding padrão nas laterais e topo/fundo */
+}
+
+/* --- ESTILOS DA LISTA UNICONS (Check) --- */
+.lista-check-unicons {
+    list-style: none;
+    padding-left: 0;
+}
+
+.lista-check-unicons li {
+    margin-bottom: 15px; 
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start; 
+}
+
+.check-icon {
+    color: var(--cor-azul-escuro); /* Mantenha o azul, ou ajuste para a cor desejada (ex: #5C6BC0) */
+    font-size: 1.2rem;
+    margin-right: 10px; 
+    flex-shrink: 0; 
+    position: relative;
+    top: 2px;
+}
