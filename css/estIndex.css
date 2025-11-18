@@ -1,0 +1,12 @@
+@import url(./estPadrao.css);
+
+.vertical-text {
+    top                 : 80%;
+    left                : 30px;
+    transform           : rotate(-90deg) translateY(-50%);
+    transform-origin    : left center;
+    white-space         : nowrap;
+    font-size           : 0.9rem;
+    position            : absolute;
+}
+

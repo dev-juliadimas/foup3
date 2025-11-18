@@ -1,0 +1,184 @@
+@import url(./estPadrao.css);
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    @font-face {
+      font-family: 'gobold';
+      src: url('./assets/fonts/gobold/Gobold-Regular.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'gobold', 'Poppins', sans-serif !important;
+    }
+
+    body {
+      overflow-x: hidden;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .navbar {
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      background-color: #023047 !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    #sidebar {
+      position: fixed;
+      top: 0;
+      left: -300px;
+      width: 300px;
+      height: 100%;
+      background-color: #f8f9fa;
+      padding: 20px;
+      box-shadow: 2px 0 12px rgba(0, 0, 0, 0.2);
+      transition: left 0.4s ease, opacity 0.4s ease;
+      opacity: 0;
+      z-index: 1050;
+    }
+
+    #sidebar.active {
+      left: 0;
+      opacity: 1;
+    }
+
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+      z-index: 1040;
+    }
+
+    #overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .vertical-text {
+      top: 80%;
+      left: 30px;
+      transform: rotate(-90deg) translateY(-50%);
+      transform-origin: left center;
+      white-space: nowrap;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .vertical-text {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      section.vh-100 {
+        min-height: 100vh;
+        padding: 3rem 1rem;
+      }
+
+      .display-1 {
+        font-size: 2.5rem;
+      }
+
+      .display-2 {
+        font-size: 2rem;
+      }
+
+      .w-50 {
+        width: 100% !important;
+      }
+
+      .col-6.offset-6 {
+        offset: 0 !important;
+        text-align: center;
+      }
+
+      .col-6.offset-6 .d-flex {
+        justify-content: center;
+      }
+    }
+
+    /* Container do título para posicionar a linha */
+/* --- ESTILOS DA LINHA VERTICAL E CONTAINER DO TÍTULO --- */
+
+.titulo-container {
+    /* Garante que o conteúdo comece à esquerda */
+    justify-content: flex-start;
+    /* Adiciona um padding à ESQUERDA da coluna, para afastar da borda da tela */
+    padding-left: 20px; /* Ajuste este valor se precisar de mais espaço na margem esquerda */
+    
+    /* Adiciona padding à DIREITA da coluna, para afastar da imagem */
+    padding-right: 20px; /* Ajuste se precisar de mais espaço da imagem */
+    
+    /* Outros estilos para Flexbox... */
+    display: flex;
+    align-items: center; 
+}
+
+/* Estilo para a Linha Vertical */
+.linha-vertical {
+    background-color: #5C95A7; 
+    width: 8px;
+    height: 100%; /* Para cobrir toda a altura */
+    
+    /* CHAVE: Aumenta o espaçamento entre a linha e o texto */
+    margin-right: 25px; /* Valor de espaçamento entre a linha e o texto. Ajuste conforme o visual desejado. */
+    
+    /* Garante que a linha se estique */
+    align-self: stretch; 
+}
+
+/* Estilo do Título (para o texto ficar separado da linha) */
+.titulo-destaque {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 0.85; /* Mantém as linhas do texto próximas */
+    
+    /* Não adicione padding ou margin lateral aqui, o `.linha-vertical` já faz isso */
+}
+/* --- ESTILOS DO CONTAINER PAI --- */
+/* (Já configurado, mas reforçando: d-flex e align-items-stretch no .row) */
+
+/* --- ESTILOS DA COLUNA DA IMAGEM --- */
+.container-imagem {
+    /* Ocupa a altura total da coluna definida pelo conteúdo vizinho */
+    height: 100%; 
+    /* Garante que o padding horizontal do Bootstrap não afete o ajuste vertical */
+    padding: 0; 
+    
+    /* Usa Flexbox para controlar o posicionamento da imagem */
+    display: flex;
+    align-items: center; /* Centraliza a imagem verticalmente dentro da coluna (opcional) */
+    justify-content: center; /* Centraliza a imagem horizontalmente (opcional) */
+}
+
+/* --- ESTILOS DA IMAGEM --- */
+.imagem-ajustada {
+    /* CHAVE: Define a altura da imagem para preencher 100% do seu container pai */
+    height: 100%; 
+    
+    /* Garante que a imagem cubra o container sem ser distorcida, cortando o excesso */
+    object-fit: cover; 
+    
+    /* Garante que a imagem não estoure a largura da coluna */
+    width: 100%; 
+}
+
+.linha-vertical {
+    /* ... seu estilo existente da linha ... */
+    height: 100%; /* Ajuste para garantir que a linha cubra toda a altura da coluna */
+    align-self: stretch; /* Garante que a linha se estique verticalmente */
+}

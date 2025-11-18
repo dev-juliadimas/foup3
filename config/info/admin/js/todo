@@ -1,0 +1,109 @@
+- document validation lifecycle: setup (add event handlers), run validation (prepare form, validate elements, display errors/submit form)
+	 -> show where the user can hook in via callbacks
+	 
+- AND depedency: specify multiple expressions as an array
+
+additional options/callbacks:
+- onsubmit: Boolean, default true - validate on form submit (similar to onkeyup/onblur)
+- beforeValidation: Callback, called before doing any validation
+- beforeSubmit: Callback, called before submitting the form (default submit or calling submitHandler, if specified) 
+
+- bug: refresh now adds also key events in general, but doesn't for partial refreshs, and it should replace them if already present, instead of adding the same handler again and again
+- bug: remote validation triggers display/validation of other fields
+
+- add test and a tab-example for subformRequired
+- document invalidHandler
+- document all those event options
+- is that element == lastElement check in the onblur handler really useful?
+
+- ajax: captcha validation ( http://psyrens.com/captcha/ )
+- allow to ignore a default value for onblur-validation
+- performance tuning: add about 100 fields to custom-method-demo and profile IE
+- oninvalid/invalidSubmitHandler: called after a form is validated on submit and its invalid
+- removing messages by specifying null or an empty string doesn't work as it defaults to the default message. improve that check
+- animations!!
+- ajax validation:
+	- in combination with autocomplete (mustmatch company name, fill out address details, validate required)
+	- validate zip code in comparison to address, if match and state is missing, fill out state
+- strong password check/integration: http://phiras.wordpress.com/2007/04/08/password-strength-meter-a-jquery-plugin/
+- add/modify onkeyup option: true - immediate, false - none
+
+- validate on paste:
+
+I'm going to assume that you have some validate function
+"checkVal".
+
+input.blur(checkVal);
+
+if ($.browser.msie)
+ this.onpaste= function(){setTimeout(checkVal,0);};
+else if ($.browser.mozilla)
+ this.addEventListener('input',checkVal,false);
+
+- docs: update options, fix rules/messages
+- custom-methods-demo.html enable summary container, currently broken, is updated too often
+- stop firefox password manager to popup before validation - very very difficult
+
+8 Sijawusz Pur Rahnama, 12:30: first of all, it would be handy to have some hideError(s) method
+8 Sijawusz Pur Rahnama, 12:31: the second thing is to provide some sort of ids not constrained only to DOM tree
+8 Sijawusz Pur Rahnama, 12:32: it can be achieved by sniffing some character on a front of id
+8 Sijawusz Pur Rahnama, 12:32: like # for example
+8 Sijawusz Pur Rahnama, 12:33: by this, we'll be able to set some custom errors not strictly related to our form
+8 Sijawusz Pur Rahnama, 12:33: for example
+8 Sijawusz Pur Rahnama, 12:34: validator.setErrors({ '#broken_connection': 'There was a problem with connection, try again later' });
+8 Sijawusz Pur Rahnama, 12:35: and later we could use validator.hideError('#broken_connection');
+
+ Examples:
+ - wordpress comment form, make it a drop-in method
+ - masked input plugin integration http://digitalbush.com/projects/masked-input-plugin -> marketo
+ - ajaxForm() integration
+ - ajaxSubmit with rules-option, more/less options to ajaxSubmit
+ - watermark integration http://digitalbush.com/projects/watermark-input-plugin
+ - custom password validation, eg. 6 chars min, and at least 1 number and at least 1 alpha or Must not use 123, abc, asdf or your username or your domain in the password, see addMethod2 test
+ - datepicker integration (see dobis)
+ - timepicker integration ( http://labs.perifer.se/timedatepicker/ ) 
+ - milk example
+ - one example for each option
+ - intergration with rich-text-editors (FCKEditor, TinyMCE, Codepress)
+ - integration with CakePHP ( https://trac.cakephp.org/ticket/2359 )
+ - integration with tabs: http://www.netix.sk/forms/test.html
+ 
+ -> In simple terms, you need to "move" the content from the TinyMCE
+control to the textarea for validation.
+
+$('button.save').click(function(){
+	if (tinyMCE) tinyMCE.triggerSave();
+});
+http://wiki.moxiecode.com/index.php/TinyMCE:Functions#tinyMCE.triggerSave
+ 
+http://www.fyneworks.com/jquery/FCKEditor/
+
+Examples for specifying validation rules via special classes:
+
+var classRules = {
+    required: "required",
+    requiredChecked: {
+        required: "#checked:checked"
+    },
+    requiredMail: {
+        required: true,
+        email: true
+    }
+};
+
+var rules = {};
+$(':input').each(function() {
+    var input = this;
+    if ( $(input).attr("class") ) {
+        $.each($(input).attr("class").split(" "), function(i, n) {
+            if ( n in classRules ) {
+                rules[ input.name] = classRules[n];
+            }
+        });
+    }
+});
+
+
+$("form").validate({
+    rules: rules
+});

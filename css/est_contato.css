@@ -1,0 +1,124 @@
+@import url(./estPadrao.css);
+
+/* Banner Superior (Telefone) */
+.contato-banner {
+  background-color    : var(--cor-azul-escuro);
+  min-height          : 350px;
+  display             : flex;
+  flex-direction      : column;
+  align-items         : center;
+  justify-content     : center;
+  padding             : 40px 0;
+  position            : relative;
+}
+
+.contato-banner img {
+  max-width           : 300px; /* Tamanho do telefone na imagem */
+  position            : absolute;
+  
+  z-index             : 10;
+}
+
+/* Seção Principal - Formulário e Dados */
+.contato-main {
+  padding             : 80px 0 60px; /* Padding extra no topo para compensar o telefone */
+  background-color    : var(--cor-branco);
+  text-align          : center;
+}
+
+.contato-main p {
+  color               : var(--cor-preto);
+  margin-bottom       : 30px;
+}
+
+/* Container do Formulário */
+.form-container {
+  background-color    : var(--cor-branco);
+  border-radius       : 8px;
+  box-shadow          : 0 4px 12px var(--cor-preto);
+  padding             : 40px;
+  max-width           : 900px;
+  margin              : 0 auto;
+}
+
+.form-info {
+  padding-left        : 30px;
+  text-align          : left;
+  border-left         : 1px solid #ddd;
+}
+
+.form-info strong {
+  display             : block;
+  margin-top          : 20px;
+  color               : var(--cor-azul-escuro);
+  font-size           : 1.1rem;
+}
+
+.form-info span {
+  color               : var(--cor-laranja);
+  font-size           : 1.3rem;
+  font-weight         : 600;
+}
+
+/* Botão Enviar */
+.btn-enviar {
+  background-color    : var(--cor-azul-escuro);
+  color               : var(--cor-branco);
+  font-weight         : 600;
+  padding             : 10px 40px;
+  margin-top          : 20px;
+}
+
+/* Footer CTA */
+.footer-cta {
+  background-color    : var(--cor-azul-escuro);
+  color               : var(--cor-branco);
+  padding             : 40px 0;
+  margin-top          : 40px;
+  border-top          : 1px solid var(--cor-preto);
+}
+
+/* Container Principal para Informações (Div mãe dos itens) */
+.form-info > div {
+  /* Define o layout para que ícone e texto fiquem na mesma linha */
+  display             : flex;
+  align-items         : center; /* Centraliza verticalmente o ícone e o texto */
+  margin-bottom       : 25px; /* Espaço entre os blocos de Phone e E-mail */
+  padding-bottom      : 25px;
+  border-bottom       : 1px solid #eee; /* Linha divisória sutil */
+}
+
+/* Opcional: Remove a borda do último item */
+.form-info > div:last-child {
+  border-bottom       : none;
+  margin-bottom       : 0;
+  padding-bottom      : 0;
+}
+
+/* Estilo do Ícone (Substituindo classes não padrão como fs-28) */
+.form-info .icon {
+  color               : var(--cor-laranja) !important;
+  font-size           : 1.8rem; /* Tamanho do ícone */
+  margin-right        : 15px; /* Espaço entre o ícone e o texto */
+  margin-top          : 0;
+}
+
+/* Estilo para a Linha de Título (Phone/E-mail) e o Valor (Número/Endereço) */
+.form-info strong,
+.form-info span {
+  display             : block; /* Garante que fiquem em linhas separadas (acima/abaixo) */
+  line-height         : 1.2;
+}
+
+.form-info strong {
+  color               : var(--cor-azul-escuro);
+  font-weight         : 700;
+  font-size           : 0.9rem;
+  text-transform      : uppercase;
+}
+
+.form-info span {
+  color               : var(--cor-preto);
+  font-weight         : 500;
+  font-size           : 1rem;
+}

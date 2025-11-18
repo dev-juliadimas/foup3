@@ -1,0 +1,68 @@
+@import url(./estPadrao.css);
+
+/* Configurações de Base */
+body {
+    background-color: #303030;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    background-color: #303030;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    /* Define o texto para branco ou ajusta se o body for escuro */
+    color: #fff; 
+}
+
+
+
+/* 2. Estilo para os Botões Transparentes ("Termo de Adesão" e "Modelo") */
+/* Define o estado normal (transparente) e hover */
+
+
+/* 4. Estilo para o Bloco de Informações "Quais Instituições Podem Participar?" */
+.info-card-container {
+    padding: 20px;
+    background-color: #353535; /* Fundo escuro */
+    border: 1px solid #555; /* Borda sutil */
+    border-radius: 10px;
+    color: #FFFFFF; /* Texto principal branco */
+}
+
+/* Aplica a cor de destaque apenas na palavra 'QUAIS' */
+
+
+.info-card-container{
+  margin: 100px;
+}
+
+
+
+/* 5. Estilo para os Campos de Formulário Flutuantes (para fundo escuro) */
+/* Isso garante que os campos e os labels fiquem visíveis no fundo escuro */
+.form-control, .form-select {
+    background-color: #404040; /* Fundo mais escuro para os campos */
+    border-color: #555; /* Borda sutil */
+    color: #FFFFFF; /* Texto digitado em branco */
+}
+
+/* Cor do label em estado flutuante */
+.form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-select ~ label {
+    color: var(--foup-destaque); /* Cor de destaque no label flutuante */
+}
+
+/* Cor do placeholder ou quando o campo está vazio (o label) */
+.form-floating > label {
+    color: #BBBBBB;
+}
